@@ -6,6 +6,8 @@
     <title>Wijngoed Storminck - Under Construction</title>
     <!-- Google Fonts: Alta -->
     <link href="https://fonts.googleapis.com/css2?family=Alta:ital,wght@0,400&display=swap" rel="stylesheet">
+    <!-- Instagram logo from Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -24,12 +26,24 @@
             max-width: 50%; /* Scale the logo to 50% */
             height: auto;
         }
-        h1 {
+        h1, .follow-us {
             font-size: 2vw; /* Smaller, responsive font size */
             margin-top: 1rem;
             text-transform: uppercase;
             opacity: 0; /* Initially hidden */
             animation: fadeIn 2s ease-in-out forwards; /* Fade-in effect */
+        }
+        .follow-us {
+            font-size: 1.5vw; /* Slightly smaller text for the "Follow us on" part */
+            animation-delay: 3s; /* Delay to start fade-in after "Under Construction" fades out */
+        }
+        .instagram-icon {
+            font-size: 3rem;
+            margin-left: 10px;
+            color: white;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 4s; /* Instagram icon fades in after "Follow us on" */
         }
         @keyframes fadeIn {
             from {
@@ -39,10 +53,26 @@
                 opacity: 1;
             }
         }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 2s ease-in-out forwards;
+            animation-delay: 3s; /* Fade out after 3 seconds */
+        }
     </style>
 </head>
 <body>
     <img src="PNG-wit.png" alt="Wijngoed Storminck Logo">
-    <h1>Under Construction</h1>
+    <h1 class="fade-out">Under Construction</h1>
+    <div class="follow-us">Follow us on</div>
+    <a href="https://instagram.com/wijngoedstorminck" target="_blank">
+        <i class="fab fa-instagram instagram-icon"></i>
+    </a>
 </body>
 </html>
